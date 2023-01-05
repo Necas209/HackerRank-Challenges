@@ -2,9 +2,8 @@ import numpy as np
 
 
 def main() -> None:
-    p = list(map(float, input().split()))
+    p = np.array(input().split(), float)
     x = float(input())
-
     print(np.polyval(p, x))
 
 

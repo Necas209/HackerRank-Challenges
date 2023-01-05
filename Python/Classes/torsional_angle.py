@@ -29,7 +29,8 @@ def main() -> None:
     b = list(map(float, input().split()))
     a = Points(a[0], a[1], a[2])
     b = Points(b[0], b[1], b[2])
-    print(round(math.degrees(math.acos(a.dot(b) / (a.absolute() * b.absolute())))), chr(176), sep='')
+    radians = math.acos(a.dot(b)) / (a.absolute() * b.absolute())
+    print(f'{math.degrees(radians):.2f}°')
 
 
 if __name__ == '__main__':
