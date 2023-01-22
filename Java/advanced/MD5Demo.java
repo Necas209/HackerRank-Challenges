@@ -24,5 +24,6 @@ public class MD5Demo {
         String input = scanner.nextLine();
         String md5 = MD5.getMD5(input);
         System.out.println(md5);
+        scanner.close();
     }
 }

@@ -25,5 +25,6 @@ public class Sha256Demo {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         System.out.println(Sha256.getHash(input));
+        scanner.close();
     }
 }
