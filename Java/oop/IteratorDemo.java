@@ -9,7 +9,8 @@ public class IteratorDemo {
         Iterator<Object> it = mylist.iterator();
         while (it.hasNext()) {
             Object element = it.next();
-            if (element instanceof String) break;
+            if (element instanceof String)
+                break;
         }
         return it;
     }
@@ -31,6 +32,6 @@ public class IteratorDemo {
             Object element = it.next();
             System.out.println((String) element);
         }
+        sc.close();
     }
 }
-

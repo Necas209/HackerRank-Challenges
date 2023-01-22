@@ -25,11 +25,8 @@ class Interface {
         sc.close();
     }
 
-    /*
-     *  ImplementedInterfaceNames method takes an object and prints the name of the interfaces it implemented
-     */
     static void ImplementedInterfaceNames(Object o) {
-        var theInterfaces = o.getClass().getInterfaces();
+        Class<?>[] theInterfaces = o.getClass().getInterfaces();
         for (Class<?> theInterface : theInterfaces) {
             String interfaceName = theInterface.getName();
             System.out.println(interfaceName);

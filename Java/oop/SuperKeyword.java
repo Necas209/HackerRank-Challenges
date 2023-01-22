@@ -21,7 +21,6 @@ class Motorcycle extends Bicycle {
 
 class SuperKeyword {
     public static void main(String[] args) {
-        //noinspection unused
-        Motorcycle M = new Motorcycle();
+        new Motorcycle();
     }
 }
