@@ -1,11 +1,9 @@
 package data_structs;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
-
-record Student(int id, String firstName, double cGPA) {
-}
 
 public class JavaSort {
     public static void main(String[] args) {
@@ -21,15 +19,11 @@ public class JavaSort {
             testCases--;
         }
         in.close();
-        studentList.sort((o1, o2) -> {
-            if (o1.cGPA() != o2.cGPA())
-                return o1.cGPA() < o2.cGPA() ? 1 : -1;
-            if (o1.firstName().equals(o2.firstName()))
-                return o1.id() - o2.id();
-            return o1.firstName().compareTo(o2.firstName());
-        });
+        studentList.sort(Comparator.comparing(Student::getCGPA, Comparator.reverseOrder())
+                .thenComparing(Student::getName)
+                .thenComparing(Student::getID));
         for (Student st : studentList) {
-            System.out.println(st.firstName());
+            System.out.println(st.getName());
         }
     }
 }
