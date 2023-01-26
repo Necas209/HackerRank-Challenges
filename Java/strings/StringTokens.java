@@ -1,3 +1,5 @@
+package strings;
+
 import java.util.Scanner;
 
 public class StringTokens {
@@ -5,8 +7,8 @@ public class StringTokens {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         scan.close();
-        String delims = "[ !,?._'@]+";
-        String[] tokens = s.trim().split(delims);
+        String delimiters = "[ !,?._'@]+";
+        String[] tokens = s.trim().split(delimiters);
         if (tokens.length == 0 || tokens[0].equals(""))
             System.out.println(0);
         else

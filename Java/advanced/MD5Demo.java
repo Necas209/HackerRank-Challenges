@@ -18,6 +18,7 @@ class MD5 {
         return null;
     }
 }
+
 public class MD5Demo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

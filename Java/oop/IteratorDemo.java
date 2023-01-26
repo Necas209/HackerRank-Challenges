@@ -16,18 +16,18 @@ public class IteratorDemo {
     }
 
     public static void main(String[] args) {
-        ArrayList<Object> mylist = new ArrayList<>();
+        ArrayList<Object> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            mylist.add(sc.nextInt());
+            list.add(sc.nextInt());
         }
-        mylist.add("###");
+        list.add("###");
         for (int i = 0; i < m; i++) {
-            mylist.add(sc.next());
+            list.add(sc.next());
         }
-        Iterator<Object> it = func(mylist);
+        Iterator<Object> it = func(list);
         while (it.hasNext()) {
             Object element = it.next();
             System.out.println((String) element);

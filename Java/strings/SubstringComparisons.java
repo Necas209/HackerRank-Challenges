@@ -1,3 +1,5 @@
+package strings;
+
 import java.util.Scanner;
 
 public class SubstringComparisons {
@@ -8,12 +10,12 @@ public class SubstringComparisons {
         }
         String smallest = substrings[0];
         String largest = substrings[0];
-        for (int i = 0; i < substrings.length; i++) {
-            if (substrings[i].compareTo(smallest) < 0) {
-                smallest = substrings[i];
+        for (String substring : substrings) {
+            if (substring.compareTo(smallest) < 0) {
+                smallest = substring;
             }
-            if (substrings[i].compareTo(largest) > 0) {
-                largest = substrings[i];
+            if (substring.compareTo(largest) > 0) {
+                largest = substring;
             }
         }
         return smallest + "\n" + largest;

@@ -12,10 +12,10 @@ class Rockstar {
 class Hacker {
 }
 
-public class Instanceof {
-    private static String count(ArrayList<Object> mylist) {
+public class InstanceOf {
+    private static String count(ArrayList<Object> list) {
         int a = 0, b = 0, c = 0;
-        for (Object element : mylist) {
+        for (Object element : list) {
             if (element instanceof Student)
                 a++;
             if (element instanceof Rockstar)
@@ -27,19 +27,19 @@ public class Instanceof {
     }
 
     public static void main(String[] args) {
-        ArrayList<Object> mylist = new ArrayList<>();
+        ArrayList<Object> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         for (int i = 0; i < t; i++) {
             String s = sc.next();
             if (s.equals("Student"))
-                mylist.add(new Student());
+                list.add(new Student());
             if (s.equals("Rockstar"))
-                mylist.add(new Rockstar());
+                list.add(new Rockstar());
             if (s.equals("Hacker"))
-                mylist.add(new Hacker());
+                list.add(new Hacker());
         }
         sc.close();
-        System.out.println(count(mylist));
+        System.out.println(count(list));
     }
 }

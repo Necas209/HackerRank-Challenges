@@ -10,9 +10,7 @@ import java.util.Scanner;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @interface FamilyBudget {
-    String userRole()
-
-    default "GUEST";
+    String userRole() default "GUEST";
 
     int budgetLimit() default 0;
 }
@@ -39,14 +37,12 @@ public class Annotations {
         Method[] methods = annotatedClass.getMethods();
         for (Method method : methods) {
             if (method.isAnnotationPresent(FamilyBudget.class)) {
-                FamilyBudget family = method
-                        .getAnnotation(FamilyBudget.class);
+                FamilyBudget family = method.getAnnotation(FamilyBudget.class);
                 String userRole = family.userRole();
                 int budgetLimit = family.budgetLimit();
                 if (userRole.equals(role)) {
                     if (budgetLimit >= spend) {
-                        method.invoke(FamilyMember.class.getDeclaredConstructor().newInstance(),
-                                budgetLimit, spend);
+                        method.invoke(FamilyMember.class.getDeclaredConstructor().newInstance(), budgetLimit, spend);
                     } else {
                         System.out.println("Budget Limit Over");
                     }
